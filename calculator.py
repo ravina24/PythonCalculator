@@ -25,6 +25,14 @@ class app(Frame):
             for text in clearButton:
                 button(clear, LEFT, text, lambda storeObj=display, q=text: storeObj.set(''))
 
+        for numButton in ("789/", "456*", "123-", "0.+"):
+            functionNum = calc_frame(self, TOP)
+            for char in numButton:
+                button(functionNum, LEFT, char,
+                       lambda storeObj=display, q=char:storeObj.set(storeObj.get() + q))
+
+
+
 
 
 if __name__ == '__main__':
